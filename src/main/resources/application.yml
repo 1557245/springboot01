@@ -1,0 +1,50 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /myweb
+spring:
+  profiles:
+    active: test
+    
+student:
+  sid: 1
+  name: lw
+  lists:
+    - a
+    - b
+    - c
+  maps:
+    a: aaa
+    b: bbb
+    c: ccc
+  school:
+    id: 1
+    name: school
+    
+---
+server:
+  port: 9090
+spring:
+  profiles: test
+student:
+  sid: 1
+  name: test
+  lists: [a,b,c]
+  maps: {a: aaa,b: bbb}
+  school:
+    id: 1
+    name: school
+  
+---
+server:
+  port: 9091
+spring: 
+  profiles: online
+student:
+  sid: 1
+  name: online
+  lists: [a,b,c]
+  maps: {a: aaa,b: bbb}
+  school:
+    id: 1
+    name: school
